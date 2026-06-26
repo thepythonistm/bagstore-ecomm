@@ -1,0 +1,176 @@
+/* =============================================
+   APP-SPECIFIC STYLES
+   Responsive, Section-specific overrides
+   ============================================= */
+
+/* --- Desktop Nav --- */
+.desktop-nav {
+  display: flex !important;
+}
+
+.mobile-menu-btn {
+  display: none !important;
+}
+
+/* --- Gallery Grid Responsive --- */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .thumbnail-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+}
+
+/* --- Benefits Grid Responsive --- */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- Features Blocks Responsive --- */
+@media (max-width: 768px) {
+  .feature-block {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .feature-block > div:first-child {
+    order: 1 !important;
+  }
+
+  .feature-block > div:last-child {
+    order: 2 !important;
+  }
+}
+
+/* --- Trust Grid Responsive --- */
+@media (max-width: 768px) {
+  .trust-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+/* --- Footer Grid Responsive --- */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* --- Testimonials Scrollbar Hide --- */
+.testimonials-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Admin Settings Grid Responsive --- */
+@media (max-width: 768px) {
+  .settings-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- Mobile Nav Override --- */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+/* --- Admin Mobile --- */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-content {
+    margin-left: 0 !important;
+  }
+
+  .admin-topbar {
+    padding: 0 16px !important;
+  }
+
+  .admin-page {
+    padding: 16px !important;
+  }
+
+  .admin-table-card {
+    padding: 16px !important;
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    min-width: 700px;
+  }
+}
+
+/* --- Hero Text Shadow Enhancement --- */
+.hero-title,
+.hero-subtitle {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Smooth Scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- WhatsApp Button Safe Area for Mobile --- */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .floating-whatsapp {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  .floating-whatsapp,
+  .modal-overlay,
+  .admin-sidebar,
+  .admin-topbar {
+    display: none !important;
+  }
+}
